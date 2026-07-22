@@ -37,7 +37,7 @@ function sendToWhatsApp(event) {
     event.preventDefault(); // Page reload rokne ke liye
 
     // 🔴 IMPORTANT: Yahan apna WhatsApp Number daalein (Country Code 91 ke saath, Bina + ya space ke)
-    const ownerWhatsAppNumber = "919135766040"; 
+    const ownerWhatsAppNumber = "91xxxxxxxxxx"; 
 
     // Form inputs se value lena
     const name = document.getElementById('custName').value;
