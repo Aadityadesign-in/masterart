@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masala Art - Ultra Premium Indian Dining</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#home">
+                    <img src="https://img.icons8.com/color/96/restaurant-.png" alt="Masala Art Logo">
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#home" class="nav-link active">
+                        <img src="https://img.icons8.com/ios-glyphs/30/e67e22/home.png" alt="Home" class="nav-icon">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#menu" class="nav-link">
+                        <img src="https://img.icons8.com/ios-glyphs/30/e67e22/restaurant-menu.png" alt="Menu" class="nav-icon">
+                        Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="#gallery" class="nav-link">
+                        <img src="https://img.icons8.com/ios-glyphs/30/e67e22/gallery.png" alt="Gallery" class="nav-icon">
+                        Gallery
+                    </a>
+                </li>
+                <li>
+                    <a href="#reservations" class="nav-link">
+                        <img src="https://img.icons8.com/ios-glyphs/30/e67e22/bookmark.png" alt="Reservations" class="nav-icon">
+                        Reservations
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link">
+                        <img src="https://img.icons8.com/ios-glyphs/30/e67e22/phone.png" alt="Contact" class="nav-icon">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. Home Section -->
+    <section id="home" class="hero">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80');"></div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <div class="left-illustration" data-aos="fade-right" data-aos-duration="1500">
+                <div class="cooking-frame">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80" alt="Cooking Pot" class="floating">
+                </div>
+            </div>
+
+            <div class="center-text" data-aos="zoom-in" data-aos-duration="1200">
+                <h1 class="brand-name gold-text">MASALA ART</h1>
+                <p class="tagline">Experience the <span class="highlight">Magic</span> of Indian Flavors</p>
+                <a href="#menu" class="btn-menu ripple">Explore Our Menu</a>
+            </div>
+
+            <div class="right-illustration" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
+                <div class="mascot-container">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80" alt="Chef Mascot" class="mascot-floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Menu Section -->
+    <section id="menu" class="menu-previews">
+        <div class="container">
+            <h2 class="section-title gold-text" data-aos="fade-up">Our Masterpieces</h2>
+            <div class="dish-grid">
+                <div class="menu-item glass-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="dish-image">
+                        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&q=80" alt="Shahi Paneer">
+                    </div>
+                    <h3>Shahi Paneer</h3>
+                </div>
+                <div class="menu-item glass-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="dish-image">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&q=80" alt="Hyderabadi Biryani">
+                    </div>
+                    <h3>Hyderabadi Biryani</h3>
+                </div>
+                <div class="menu-item glass-card" data-aos="flip-left" data-aos-delay="600">
+                    <div class="dish-image">
+                        <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?w=500&q=80" alt="Garlic Naan">
+                    </div>
+                    <h3>Garlic Naan</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <h2 class="section-title gold-text" data-aos="fade-up">Restaurant Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600&q=80" data-aos="zoom-in" alt="Ambience">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" data-aos="zoom-in" data-aos-delay="200" alt="Food">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" data-aos="zoom-in" data-aos-delay="400" alt="Table">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Reservations Section (Direct WhatsApp) -->
+    <section id="reservations" class="section-padding dark-bg">
+        <div class="container">
+            <h2 class="section-title gold-text" data-aos="fade-up">Book A Table</h2>
+            <div class="reservation-box glass-card" data-aos="fade-up">
+                
+                <form id="whatsappBookingForm" onsubmit="sendToWhatsApp(event)">
+                    <input type="text" id="custName" placeholder="Your Name" required>
+                    <input type="tel" id="custPhone" placeholder="Phone Number" required>
+                    <input type="date" id="custDate" required>
+                    <input type="number" id="custGuests" placeholder="Number of Guests" min="1" max="10" required>
+                    
+                    <button type="submit" class="btn-menu ripple" style="margin-top: 15px; width: 100%;">
+                        Book Table via WhatsApp 💬
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Buttons (WhatsApp Button + Chatbot) -->
+    <div class="floating-buttons-group">
+        <a href="https://wa.me/919135766040?text=Hello!%20I%20want%20to%20book%20a%20table." target="_blank" class="chat-toggle" style="background: #25D366; text-decoration: none;">
+            <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp Us">
+        </a>
+        <div class="chat-toggle" onclick="toggleChat()">
+            <img src="https://img.icons8.com/color/48/chat--v1.png" alt="Chat Bot">
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window glass-card hidden" id="chatWindow">
+            <div class="chat-header">
+                <h3>Masala Art Assistant</h3>
+                <button onclick="toggleChat()">✕</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message bot-message slide-left">
+                    <p>Namaste! 👋 I'm here to help. Ask about specials or book a table!</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Type your query...">
+                <button id="sendBtn" class="send-arrow ripple">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/filled-sent.png" alt="Send" style="width: 20px;">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Contact / Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><img src="https://img.icons8.com/color/48/facebook-new.png" alt="FB"></a>
+                        <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="IG"></a>
+                        <a href="https://youtube.com" target="_blank"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YT"></a>
+                        <a href="https://wa.me/919135766040" target="_blank"><img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+                <div class="footer-section status">
+                    <div class="real-time-status">
+                        <span class="status-indicator live"></span> Real-time: Open Now
+                    </div>
+                </div>
+                <div class="footer-section contact-info">
+                    <p>📞 <a href="tel:+919135766040" style="color: inherit; text-decoration: none;">+91 9135766040</a></p>
+                    <p>✉️ <a href="mailto:info@masalaart.com" style="color: inherit; text-decoration: none;">info@masalaart.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+    </script>
+    <!-- Version parameter added to bypass cache -->
+    <script src="script.js?v=1.2"></script>
+</body>
+</html>
