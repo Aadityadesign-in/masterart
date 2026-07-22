@@ -37,7 +37,7 @@ function sendToWhatsApp(event) {
     event.preventDefault(); // Page reload rokne ke liye
 
     // 🔴 IMPORTANT: Yahan apna WhatsApp Number daalein (Country Code 91 ke saath, Bina + ya space ke)
-    const ownerWhatsAppNumber = "91xxxxxxxxxx"; 
+    const ownerWhatsAppNumber = "919135766040"; 
 
     // Form inputs se value lena
     const name = document.getElementById('custName').value;
@@ -113,3 +113,36 @@ function sendMessage() {
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 1000);
 }
+// Automatic Restaurant Open/Closed Status Logic
+function updateRestaurantStatus() {
+    const statusDot = document.getElementById('statusDot');
+    const statusText = document.getElementById('statusText');
+
+    if (!statusDot || !statusText) return;
+
+    // Current Time Nikalna
+    const now = new Date();
+    const currentHour = now.getHours(); // 0 - 23 (24 Hour format)
+
+    // Restaurant Timings: 10 AM (10) se 11 PM (23) tak
+    const openHour = 10;  // 10:00 AM
+    const closeHour = 23; // 11:00 PM
+
+    // Condition Check
+    if (currentHour >= openHour && currentHour < closeHour) {
+        // OPEN NOW (Green Light)
+        statusDot.className = 'status-indicator live';
+        statusDot.style.background = '#2ecc71';
+        statusDot.style.boxShadow = '0 0 8px #2ecc71';
+        statusText.innerText = 'Real-time: Open Now 🟢';
+    } else {
+        // CLOSED NOW (Red Light)
+        statusDot.className = 'status-indicator closed';
+        statusDot.style.background = '#e74c3c';
+        statusDot.style.boxShadow = '0 0 8px #e74c3c';
+        statusText.innerText = 'Real-time: Closed Now 🔴';
+    }
+}
+
+// Page load hone par automatically run karein
+document.addEventListener('DOMContentLoaded', updateRestaurantStatus);
