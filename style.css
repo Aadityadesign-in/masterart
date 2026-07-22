@@ -1,3 +1,6 @@
+/* ==========================================
+   1. ROOT VARIABLES & GLOBAL STYLES
+   ========================================== */
 :root {
     --bg-light: #fcf6eb;
     --bg-dark: #3e2723;
@@ -11,7 +14,11 @@
     --font-body: 'Poppins', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 html {
     scroll-behavior: smooth;
@@ -22,50 +29,88 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     overflow-x: hidden;
+    width: 100%;
 }
 
-h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; }
+h1, h2, h3 { 
+    font-family: var(--font-heading); 
+    font-weight: 700; 
+}
 
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
 
 .gold-text {
     background: linear-gradient(to right, #f39c12, #f9e79f, #f39c12);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .section-padding { padding: 90px 0; }
 .dark-bg { background: var(--bg-dark); color: #fff; }
 
-/* Progress Bar */
+/* ==========================================
+   2. PROGRESS BAR & HEADER / NAVIGATION
+   ========================================== */
 .progress-container {
-    position: fixed; top: 0; z-index: 2000;
-    width: 100%; height: 5px; background: rgba(0,0,0,0.1);
+    position: fixed; 
+    top: 0; 
+    z-index: 2000;
+    width: 100%; 
+    height: 5px; 
+    background: rgba(0,0,0,0.1);
 }
-.progress-bar { height: 5px; background: var(--accent-orange); width: 0%; }
 
-/* Header & Nav */
+.progress-bar { 
+    height: 5px; 
+    background: var(--accent-orange); 
+    width: 0%; 
+}
+
 header {
-    background: rgba(62, 39, 35, 0.9);
+    background: rgba(62, 39, 35, 0.95);
     backdrop-filter: blur(15px);
-    position: fixed; width: 100%; top: 0; z-index: 1000;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 nav {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
     padding: 10px 50px;
 }
 
-.logo img { height: 50px; transition: transform 0.3s; }
+.logo img { 
+    height: 50px; 
+    transition: transform 0.3s; 
+}
 
-nav ul { list-style: none; display: flex; gap: 30px; }
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 30px; 
+}
 
 nav ul li a {
-    text-decoration: none; color: #fff;
-    font-weight: 500; font-size: 0.9rem;
-    display: flex; flex-direction: column; align-items: center;
+    text-decoration: none; 
+    color: #fff;
+    font-weight: 500; 
+    font-size: 0.9rem;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -74,124 +119,326 @@ nav ul li a:hover, nav ul li a.active {
     transform: translateY(-3px);
 }
 
-.nav-icon { width: 22px; height: 22px; margin-bottom: 4px; }
+.nav-icon { 
+    width: 22px; 
+    height: 22px; 
+    margin-bottom: 4px; 
+}
 
-/* Hero Section */
+/* ==========================================
+   3. HERO SECTION (DESKTOP)
+   ========================================== */
 .hero {
-    height: 100vh; position: relative;
-    display: flex; justify-content: center; align-items: center;
-    overflow: hidden; padding-top: 80px;
+    min-height: 100vh; 
+    position: relative;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden; 
+    padding-top: 80px;
 }
 
 .parallax-bg {
-    position: absolute; top: 0; left: 0; width: 110%; height: 110%;
-    background-size: cover; background-position: center;
-    z-index: 1; filter: blur(3px);
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 110%; 
+    height: 110%;
+    background-size: cover; 
+    background-position: center;
+    z-index: 1; 
+    filter: blur(3px);
     transform: translate(-5%, -5%);
 }
 
 .overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.55); z-index: 2;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.55); 
+    z-index: 2;
 }
 
 .hero-content {
-    display: flex; justify-content: space-between; width: 90%;
-    align-items: center; position: relative; z-index: 3;
+    display: flex; 
+    justify-content: space-between; 
+    width: 90%;
+    align-items: center; 
+    position: relative; 
+    z-index: 3;
+}
+
+.cooking-frame, .mascot-container {
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgba(245, 176, 65, 0.8), rgba(235, 152, 78, 0.8));
+    box-shadow: var(--shadow-premium);
+    padding: 15px; 
+    border: 2px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
 }
 
 .cooking-frame img, .mascot-container img {
-    width: 280px; height: 280px; object-fit: cover;
-    border-radius: 20px; display: block;
+    width: 280px; 
+    height: 280px; 
+    object-fit: cover;
+    border-radius: 20px; 
+    display: block;
 }
 
-.center-text { text-align: center; color: var(--text-light); }
-.brand-name { font-size: 5rem; margin-bottom: 10px; }
-.tagline { font-size: 1.8rem; margin-bottom: 30px; }
+.center-text { 
+    text-align: center; 
+    color: var(--text-light); 
+}
+
+.brand-name { 
+    font-size: 5rem; 
+    margin-bottom: 10px; 
+}
+
+.tagline { 
+    font-size: 1.8rem; 
+    margin-bottom: 30px; 
+    color: rgba(255,255,255,0.9); 
+}
+
+.highlight { color: var(--accent-gold); }
 
 .btn-menu {
-    display: inline-block; text-decoration: none;
+    display: inline-block; 
+    text-decoration: none;
     background: linear-gradient(45deg, var(--accent-orange), var(--accent-gold));
-    color: #fff; border: none; padding: 15px 40px; font-size: 1.1rem;
-    border-radius: 50px; cursor: pointer; font-weight: 600;
+    color: #fff; 
+    border: none; 
+    padding: 15px 40px; 
+    font-size: 1.1rem;
+    border-radius: 50px; 
+    cursor: pointer; 
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(230, 126, 34, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Sections Styling */
-.menu-previews { padding: 90px 0; background: #2b1b17; color: #fff; }
-.section-title { text-align: center; font-size: 2.8rem; margin-bottom: 50px; }
+.btn-menu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(230, 126, 34, 0.6);
+}
 
-.dish-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+/* ==========================================
+   4. SECTIONS (MENU, GALLERY, RESERVATION)
+   ========================================== */
+.menu-previews { 
+    padding: 90px 0; 
+    background: #2b1b17; 
+    color: #fff; 
+}
+
+.section-title { 
+    text-align: center; 
+    font-size: 2.8rem; 
+    margin-bottom: 50px; 
+}
+
+.dish-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
 
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px; padding: 25px; width: 280px;
-    text-align: center; box-shadow: var(--shadow-premium);
+    border-radius: 20px; 
+    padding: 25px; 
+    width: 280px;
+    text-align: center; 
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 .dish-image {
-    width: 180px; height: 180px; border-radius: 50%;
-    margin: 0 auto 20px auto; overflow: hidden;
+    width: 180px; 
+    height: 180px; 
+    border-radius: 50%;
+    margin: 0 auto 20px auto; 
+    overflow: hidden;
     border: 4px solid var(--accent-gold);
 }
-.dish-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.dish-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
 
 /* Gallery Grid */
 .gallery-grid {
-    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    flex-wrap: wrap;
 }
+
 .gallery-grid img {
-    width: 320px; height: 220px; object-fit: cover;
-    border-radius: 15px; box-shadow: var(--shadow-premium);
+    width: 320px; 
+    height: 220px; 
+    object-fit: cover;
+    border-radius: 15px; 
+    box-shadow: var(--shadow-premium);
 }
 
 /* Reservation Form */
 .reservation-box {
-    max-width: 500px; margin: 0 auto;
-}
-.reservation-box input {
-    width: 100%; padding: 12px; margin: 10px 0;
-    border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;
+    max-width: 500px; 
+    margin: 0 auto;
 }
 
-/* Floating Buttons */
+.reservation-box input {
+    width: 100%; 
+    padding: 12px; 
+    margin: 10px 0;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+    font-size: 1rem;
+    outline: none;
+}
+
+/* ==========================================
+   5. FLOATING BUTTONS & CHATBOT UI
+   ========================================== */
 .floating-buttons-group {
-    position: fixed; bottom: 30px; right: 30px; z-index: 1001;
-    display: flex; flex-direction: column; gap: 15px;
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px; 
+    z-index: 1001;
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px;
 }
 
 .chat-toggle {
-    width: 60px; height: 60px; background: #fff; border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    width: 60px; 
+    height: 60px; 
+    background: #fff; 
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    cursor: pointer; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
 }
-.chat-toggle img { width: 35px; height: 35px; }
+
+.chat-toggle img { 
+    width: 35px; 
+    height: 35px; 
+}
+
+.chat-toggle:hover { 
+    transform: scale(1.1); 
+}
 
 .chat-window {
-    position: absolute; bottom: 80px; right: 0;
-    width: 320px; height: 400px; display: flex; flex-direction: column;
-    overflow: hidden; background: #fff; color: #333; border-radius: 15px;
+    position: absolute; 
+    bottom: 80px; 
+    right: 0;
+    width: 320px; 
+    height: 400px; 
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden; 
+    background: #fff; 
+    color: #333; 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
+
 .hidden { display: none; }
 
 .chat-header {
-    background: var(--bg-dark); color: #fff;
-    padding: 12px 15px; display: flex; justify-content: space-between;
+    background: var(--bg-dark); 
+    color: #fff;
+    padding: 12px 15px; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
 }
-.chat-header button { background: none; border: none; color: #fff; cursor: pointer; }
 
-.chat-body { flex: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; }
+.chat-header button { 
+    background: none; 
+    border: none; 
+    color: #fff; 
+    cursor: pointer; 
+    font-size: 1.2rem; 
+}
 
-.message p { padding: 10px 14px; border-radius: 12px; font-size: 0.9rem; margin-bottom: 10px;}
-.bot-message p { background: #e0e0e0; color: #333; }
-.user-message p { background: var(--accent-orange); color: #fff; margin-left: auto; }
+.chat-body { 
+    flex: 1; 
+    padding: 15px; 
+    overflow-y: auto; 
+    background: #f9f9f9; 
+}
 
-.chat-input-area { display: flex; padding: 10px; background: #fff; border-top: 1px solid #eee; }
-.chat-input-area input { flex: 1; border: none; padding: 10px; outline: none; background: #f0f0f0; border-radius: 20px; }
-.send-arrow { background: var(--accent-orange); border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; }
+.message p { 
+    padding: 10px 14px; 
+    border-radius: 12px; 
+    font-size: 0.9rem; 
+    margin-bottom: 10px;
+}
 
-/* Animations */
+.bot-message p { 
+    background: #e0e0e0; 
+    color: #333; 
+    border-radius: 12px 12px 12px 0; 
+}
+
+.user-message p { 
+    background: var(--accent-orange); 
+    color: #fff; 
+    border-radius: 12px 12px 0 12px; 
+    margin-left: auto; 
+}
+
+.chat-input-area { 
+    display: flex; 
+    padding: 10px; 
+    background: #fff; 
+    border-top: 1px solid #eee; 
+}
+
+.chat-input-area input { 
+    flex: 1; 
+    border: none; 
+    padding: 10px; 
+    outline: none; 
+    background: #f0f0f0; 
+    border-radius: 20px; 
+    margin-right: 8px;
+}
+
+.send-arrow { 
+    background: var(--accent-orange); 
+    border: none; 
+    width: 38px; 
+    height: 38px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+/* ==========================================
+   6. ANIMATIONS & FOOTER
+   ========================================== */
 @keyframes floating {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
@@ -204,9 +451,179 @@ nav ul li a:hover, nav ul li a.active {
 }
 .mascot-floating { animation: mascotFloating 4s ease-in-out infinite; }
 
-/* Footer */
-footer { background: #1a0f0d; color: #fff; padding: 40px 0; border-top: 4px solid var(--accent-gold); }
-.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.social-icons { display: flex; gap: 12px; margin-top: 8px; }
-.social-icons img { width: 32px; height: 32px; }
-.status-indicator.live { width: 10px; height: 10px; border-radius: 50%; background: #2ecc71; display: inline-block; }
+footer { 
+    background: #1a0f0d; 
+    color: #fff; 
+    padding: 40px 0; 
+    border-top: 4px solid var(--accent-gold); 
+}
+
+.footer-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.social-icons { 
+    display: flex; 
+    gap: 12px; 
+    margin-top: 8px; 
+}
+
+.social-icons img { 
+    width: 32px; 
+    height: 32px; 
+    transition: transform 0.3s; 
+}
+
+.social-icons img:hover { transform: scale(1.2); }
+
+.status-indicator.live { 
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+    background: #2ecc71; 
+    display: inline-block; 
+    box-shadow: 0 0 8px #2ecc71;
+    margin-right: 6px;
+}
+
+/* ==========================================
+   7. FULL RESPONSIVE MEDIA QUERIES (Mobile/Tablet)
+   ========================================== */
+
+/* Tablet Screens (Max Width: 992px) */
+@media screen and (max-width: 992px) {
+    nav { padding: 10px 20px; }
+    nav ul { gap: 15px; }
+    nav ul li a { font-size: 0.8rem; }
+    .brand-name { font-size: 3.5rem; }
+    .tagline { font-size: 1.4rem; }
+    .cooking-frame img, .mascot-container img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Mobile Screens (Max Width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Header Fixed to Top Cleanly */
+    header {
+        padding: 5px 0;
+    }
+
+    nav {
+        padding: 10px 15px;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 0.7rem;
+    }
+
+    .nav-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Hero Section Auto Height */
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .cooking-frame img, .mascot-container img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .brand-name {
+        font-size: 2.8rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn-menu {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    /* Grids to Single Column */
+    .section-padding, .menu-previews {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .dish-grid, .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .glass-card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .gallery-grid img {
+        width: 90%;
+        height: 200px;
+    }
+
+    .reservation-box {
+        width: 90%;
+    }
+
+    /* Floating Chat Buttons Adjusted for Mobile */
+    .floating-buttons-group {
+        bottom: 20px;
+        right: 15px;
+    }
+
+    .chat-toggle {
+        width: 50px;
+        height: 50px;
+    }
+
+    .chat-toggle img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .chat-window {
+        width: 280px;
+        right: 0;
+        bottom: 65px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
